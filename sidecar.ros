@@ -1,0 +1,22 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp(ql:quickload '(clack cl-sidecar) :silent t)
+  )
+
+(defpackage :ros.script.sidecar.3745215820
+  (:use :cl))
+(in-package :ros.script.sidecar.3745215820)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  (let ((server (clack:clackup cl-sidecar:app :port 9003)))
+    (loop
+       (sleep 60))
+    (clack:stop server)))
+
+;;; vim: set ft=lisp lisp:

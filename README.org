@@ -1,0 +1,10 @@
+* Cl-Sidecar 
+
+** Description
+   Application/service/server monitor written in Common Lisp.
+
+** Usage
+   FIXME
+
+** Installation
+   FIXME (asdf/quick-lisp local-project).
